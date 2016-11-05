@@ -21,6 +21,13 @@ tuple = (1,2,3)
 dict = {Key1: "Value1", Key2: "Value2"}
 ```
 
+**here string** 
+```
+string = """
+	some string
+"""
+```
+
 ### Constructs
 
 **if, elif, else**
