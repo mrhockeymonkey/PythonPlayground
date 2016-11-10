@@ -61,3 +61,7 @@ def name(x,y) :
 	print("Inputs were {0} & {1}".format(x,y))
 ```
 
+
+### Tricks & Tips
+
+To see the values in a range use list()

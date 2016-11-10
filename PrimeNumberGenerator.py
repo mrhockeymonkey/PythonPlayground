@@ -1,5 +1,5 @@
 
-upperlimit = 100000 #1 Million
+upperlimit = 1000000 #1 Million
 
 for i in range(2,upperlimit) :
 	#Assume i to be prime
