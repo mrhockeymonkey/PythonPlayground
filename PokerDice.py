@@ -1,7 +1,6 @@
-# Author: Scott Matthews
-# Purpose: A console based game of Poker Dice 
-# Requires: Python 3.5.2
-# Notes: 
+# .AUTHOR: Scott Matthews
+# .DESCRIPTION: A console based game of Poker Dice 
+# .NOTES: Requires Python 3.5.2
 
 import random
 from itertools import groupby
