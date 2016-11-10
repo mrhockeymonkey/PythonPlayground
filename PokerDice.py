@@ -6,14 +6,10 @@
 import random
 from itertools import groupby
 
-nine = 1
-ten = 2
-jack = 3
-queen = 4
-king = 5
-ace = 6
+#these are the possible values of the dice
+names = { 1: "9", 2: "10", 3: "J", 4: "Q", 5: "K", 6: "A"}
 
-names = { nine: "9", ten: "10", jack: "J", queen: "Q", king: "K", ace: "A"}
+#these are the possible hands one can get
 hands = { 1: 'High Card', 2: 'One Pair', 3: 'Two Pair', 4: 'Three of a Kind', 5: 'Full House', 6: 'Four of a Kind', 7: 'Five of a Kind', 8: 'Straight'}
 
 player_score = 0
