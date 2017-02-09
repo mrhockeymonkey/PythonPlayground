@@ -39,6 +39,9 @@ while True:
 	# prompt user for colour
 	selected_colour = prompt()
 
-	# turn off previous colour
-	illuminate(selected_colour)
-	# turn on selected colour
+	if(selected_colour == 'q'):
+		break
+	else:
+		illuminate(selected_colour)
+
+GPIO.cleanup()

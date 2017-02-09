@@ -22,3 +22,5 @@ GPIO.setup(7, GPIO.OUT)
 # blink the led 10 times
 for i in range(0,10):
 	blink(7)
+
+GPIO.cleanup()
