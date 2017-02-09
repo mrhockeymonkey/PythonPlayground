@@ -3,7 +3,7 @@ This script prompts the user for a colour and then
 illuminates the specified LED
 """
 
-import RPi.GPIO as GPIO
+#import RPi.GPIO as GPIO
 
 # pin mapping
 colours = {'red' : 7, 'yellow' : 13, 'green' : 15}
@@ -12,6 +12,7 @@ def prompt():
 	# prompt the user to chose a colour
 	print('Please select either', ', '.join(colours.keys()))
 	user_input = input('Colour: ')
+	return user_input
 	
 
 
@@ -44,4 +45,5 @@ while True:
 	else:
 		illuminate(selected_colour)
 
+print('Quitting')
 GPIO.cleanup()
