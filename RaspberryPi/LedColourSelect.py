@@ -13,13 +13,13 @@ def prompt():
 	print('Please select either', ', '.join(colours.keys()))
 	user_input = input('Colour: ')
 	
-	if (user_input in colours.keys()):
-		return user_input
-	else:
-		raise Exception(user_input)
 
 
 def illuminate(colour):
+	# check colour is valid
+	if (colour not in colours.keys()):
+		raise Exception('Not a valid colour')
+	
 	# turn off all colours
 	for c in colours.keys():
 		print('OFF: ', colours[c])
