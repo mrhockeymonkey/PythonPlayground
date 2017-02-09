@@ -23,11 +23,11 @@ def illuminate(colour):
 	# turn off all colours
 	for c in colours.keys():
 		print('OFF: ', colours[c])
-		GPIO.output(colours[c])
+		GPIO.output(colours[c], False)
 
 	#turn on the selected colour
 	print('ON: ', colours[colour])
-	GPIO.output(colours[colour])
+	GPIO.output(colours[colour], True)
 
 #RPi Setup
 GPIO.setmode(GPIO.BOARD)
