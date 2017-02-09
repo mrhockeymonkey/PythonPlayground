@@ -1,0 +1,44 @@
+"""
+This script prompts the user for a colour and then 
+illuminates the specified LED
+"""
+
+import RPi.GPIO as GPIO
+
+# pin mapping
+colours = {'red' : 7, 'yellow' : 13, 'green' : 15}
+
+def prompt():
+	# prompt the user to chose a colour
+	print('Please select either', ', '.join(colours.keys()))
+	user_input = input('Colour: ')
+	
+	if (user_input in colours.keys()):
+		return user_input
+	else:
+		raise Exception(user_input)
+
+
+def illuminate(colour):
+	# turn off all colours
+	for c in colours.keys():
+		print('OFF: ', colours[c])
+		GPIO.output(colours[c])
+
+	#turn on the selected colour
+	print('ON: ', colours[colour])
+	GPIO.output(colours[colour])
+
+#RPi Setup
+GPIO.setmode(GPIO.BOARD)
+for p in colours.values():
+	print("Setting up pin", p, "for output")
+	GPIO.setup(p, GPIO.OUT)
+
+while True:
+	# prompt user for colour
+	selected_colour = prompt()
+
+	# turn off previous colour
+	illuminate(selected_colour)
+	# turn on selected colour

@@ -1,3 +1,8 @@
+"""
+This script will blink a single LED connected to GPIO pin 7
+ten times and then exit
+"""
+
 import RPi.GPIO as GPIO
 import time
 
@@ -8,7 +13,7 @@ def blink(pin):
 	GPIO.output(pin, False)
 	time.sleep(1)
 
-# dse board numbering 
+# use the board pin numbering to refer to pins
 GPIO.setmode(GPIO.BOARD)
 
 # declare pin 7 to be used for output
