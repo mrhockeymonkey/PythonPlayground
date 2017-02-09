@@ -3,7 +3,7 @@ This script prompts the user for a colour and then
 illuminates the specified LED
 """
 
-#import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 
 # pin mapping
 colours = {'red' : 7, 'yellow' : 13, 'green' : 15}
