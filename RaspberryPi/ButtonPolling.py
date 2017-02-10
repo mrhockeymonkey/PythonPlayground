@@ -9,7 +9,7 @@ while True:
 	# if the button is pressed, the circuit connected, then pin 7 will beocme LOW
 	if(GPIO.input(7)) == False:
 		print('Button is pressed')
-	elif == True:
+	else:
 		print('Button is not pressed')
 	
 	time.sleep(0.5)
