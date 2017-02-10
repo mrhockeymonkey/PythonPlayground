@@ -2,6 +2,9 @@
 This script will check for events every 3 seconds
 Even though the gap is longer than in ButtonPolling.py, becuase we
 are using events we should not see any inputs missed
+
+This is good that we dont miss inputs but capturing an event only occurs
+once, so multiple button presses within 3 seconds are not picked up
 """
 
 import RPi.GPIO as GPIO
