@@ -16,8 +16,8 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 # add a listener for edge event and a callback action to take in another thread
-GPIO.add_event_detect(pin, GPIO.FALLING)
-GPIO.add_event_callback(pin, callback=informpressed, bouncetime=200)
+GPIO.add_event_detect(pin, GPIO.FALLING, bouncetime=200)
+GPIO.add_event_callback(pin, callback=informpressed)
 
 while True:
 	print('...')
