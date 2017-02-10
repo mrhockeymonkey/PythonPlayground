@@ -12,6 +12,7 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 # stop execution until
+print("Press the button")
 edge = GPIO.wait_for_edge(pin, GPIO.FALLING, timeout = 5000)
 
 if edge is None:
