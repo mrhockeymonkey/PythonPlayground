@@ -7,8 +7,8 @@ function is fired in another thread.
 import RPi.GPIO as GPIO
 import time
 
-def informpressed():
-	print('BUTTON PRESSED')
+def informpressed(pin):
+	print('BUTTON PRESSED (', pin, ')')
 
 # setup pin 7 as input with a default value of ON
 pin = 7
