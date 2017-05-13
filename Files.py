@@ -30,7 +30,7 @@ file.close() # close the handle you have on the file
 # Note: You can only read the file once?
 
 # Writing to files
-f = open('C:\\temp\stuff.txt', 'w') # Open the file in 'w' Write Mode (Overwrites existing)
+f = open('C:\\temp\stuff.txt', 'w') # Open the file in 'w' Write Mode (Overwrites existing or creates if missing)
 f.write('I have been overwritten!') 
 f.close()
 
