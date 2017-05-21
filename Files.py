@@ -21,6 +21,7 @@ os.path.basename('.\\stuff.txt') # Returns filename
 os.path.getsize('.\\stuff.txt') # Get size of item
 os.path.exists('.\\stuff.txt') # Equiv of Test-Path
 os.path.isfile('.\\stuff.txt') # check its a file, can also use isdir() to check its a directory
+base, ext = os.path.splitext() #split the base and extention from a file and save
 
 # Reading and Writing plaintext 
 file = open('C:\\Temp\\stuff.txt') # Open a file to get the file object, this also create a new file if not present
