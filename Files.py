@@ -39,6 +39,9 @@ f = open('C:\\temp\\stuff.txt', 'a') # Open the file in 'a' Append Mode
 f.write('I have been appended!')
 f.close()
 
+f = open('C:\\temp\\stuff.txt', 'wb') # Open the file in 'wb' WriteBinary Mode
+f.close()
+
 # Moving files
 shutil.copy('C:\\Temp\\stuff.txt', 'C:\\temp\\stuff.txt.copy') # Copy a file (source, dest)
 shutil.copytree('C:\\temp\\folder1', 'C:\\temp\\folder1_bu') # Create a copy of an entire folder
