@@ -25,4 +25,14 @@ except Exception as e:
 	print('There was a problem but ignoring: %s' % (e))
 
 
-
+#example for wrapping an api nicely
+    def _api_call(self, api_path, method, params=None, data=None, json_data=None):
+        url = urlparse.urljoin(self.api_base_url, api_path)
+        try:
+            # look up the given method in the requests package and execute with given params
+            method = method.lower()
+            r = getattr(requests, method)(url, params=params, data=data, json=json_data, auth=self._auth)
+            r.raise_for_status()
+            return r
+        except requests.exceptions.HTTPError as err:
+            raise
