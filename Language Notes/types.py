@@ -24,6 +24,8 @@ tuple(list) # convert list to tuple
 list1 = copy.copy(list) # use copy module to make a new list object instead list1 referencing the same underlying object as list
 list1 = copy.deepcopy(list) # use of the list you wish to copy contains lists
 
+chr(0x03B1) # to display special characters
+u'\u03B1' # spciel chars by two-byte code
 """
 Tuple
 """
@@ -49,6 +51,8 @@ String
 """
 str = 'Hello Wolrd'
 r'hello\nworld' # raw string ignores escape chars
+str[1:7] # selct chars from 1 - 6
+str[10::-1] # seect chars starting form ten but stepping -1 (ie. rveser from char 10)
 str.upper() # uppercase the string
 str.islower() # check all chars lowercase
 str.isX() # lots of different checks, alpha,num,decimal,title etc
@@ -62,6 +66,9 @@ str = "{h}, {w}".format(h='Hello', w='World') # add words by variable for more c
 
 print("hello\nworld") # unicode so newline is added
 print(r"hello\nworld") # raw string so special chars ignored
+
+vals = ['foo', 'bar'] # new in 3.6
+f'value is {vals[0]}'
 
 # Here-String (Multi-line string)
 herestring = """
