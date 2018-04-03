@@ -1,5 +1,13 @@
+"""
+Misc
+"""
+type(var) # find type
+int('999') # explicitly convert types
+int('0xFF', 16) # fun with hex, comes out as 255 as an int
 
-# List
+"""
+List
+"""
 # Collection of objects, you can add or remove elements of a list (Mutable)
 list = ['one', 'two', 'three'] # define a list
 list[x] # get xth index element
@@ -16,12 +24,16 @@ tuple(list) # convert list to tuple
 list1 = copy.copy(list) # use copy module to make a new list object instead list1 referencing the same underlying object as list
 list1 = copy.deepcopy(list) # use of the list you wish to copy contains lists
 
-# Tuple
+"""
+Tuple
+"""
 # Collection of objects, you cannot add or remove elements of a tuple (Immutable)
 tuple = (1,2,3)
 list(tuple) # convert tuple to list
 
-# Dictionary
+"""
+Dictionary
+"""
 # Collection of Key-Vale pairs, equivalent to a powershell hashtable
 dict = {Key1: "Value1", Key2: "Value2"}
 dict.keys() # list of all keys
@@ -30,7 +42,11 @@ dict.items() # returns a list of each key-value pair. each item is returned as a
 dict.get(key,'?') # get value of key, or return '?' is key not found
 dict.setdefault(key,0) # add element with default value if not already present, ignored if is present
 
-# String
+# Frozen Dict is an immutable version of dict if required
+
+"""
+String
+"""
 str = 'Hello Wolrd'
 r'hello\nworld' # raw string ignores escape chars
 str.upper() # uppercase the string
@@ -44,7 +60,18 @@ str = "hello" + "world" # concat string
 str = "Hello {0}".format('World') # add words to strings using format()
 str = "{h}, {w}".format(h='Hello', w='World') # add words by variable for more complex strings
 
+print("hello\nworld") # unicode so newline is added
+print(r"hello\nworld") # raw string so special chars ignored
+
 # Here-String (Multi-line string)
 herestring = """
 	some string
 """
+
+
+"""
+Sets
+"""
+my_set = {'foo','bar'} # in sets elements must be unique and are unordered
+my_other_set = {'foo', 'bar', 'foo'}
+my_set == my_other_set # will be true becuase duplicate value got scrubbed

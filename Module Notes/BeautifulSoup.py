@@ -8,7 +8,7 @@ res = requests.get('https://tfl.gov.uk/tube-dlr-overground/status/')
 res.raise_for_status()
 tfl_soup = bs4.BeautifulSoup(res.text)
 
-example_file = open('example.html')
+example_file = open('etc/example.html')
 example_soup = bs4.BeautifulSoup(example_file, "html.parser")
 
 #Can select elemts using CSS selectors:
