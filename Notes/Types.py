@@ -40,6 +40,9 @@ str.startswith()
 ', '.join(list) # join a list int a string using the spacer ', '
 str.rjust(width, fillchar) # eg: *********str. can also ljust and center
 str.strip() # remove whitespace from left and right. can also rstrip & lstrip
+str = "hello" + "world" # concat string
+str = "Hello {0}".format('World') # add words to strings using format()
+str = "{h}, {w}".format(h='Hello', w='World') # add words by variable for more complex strings
 
 # Here-String (Multi-line string)
 herestring = """
