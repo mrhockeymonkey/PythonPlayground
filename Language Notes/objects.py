@@ -20,9 +20,11 @@ _private_to_module = 1 # one underscore prefix for modules
 __private_to_class = 2 # two underscore prefix for classes
 __special__ = 3 # double-under
 
+
 """
 Methods
 """
 my_var.upper() # example method
 dir(my_var) # to find methods
 help(str) # to see methods for type str
+
