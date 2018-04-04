@@ -19,6 +19,7 @@ bool(0) # False, also {}, [], (), None are False
 bool(1) # True
 all([1,2,3]) # True becuase ach element is true
 all([0, 1, 2]) # False becuase 0 is false
+any([0, 1]) # True becuase at least one item has a boolean true value
 
 """
 while loop
@@ -51,3 +52,12 @@ for k,v in my_dict.items():
 	print("Key is {0}, Value is {1}".format(k,v))
 
 enumerate() # can be used to make things enumerable by returing (n, val) for each in collection
+
+
+"""
+with
+"""
+# when using with, a context manager, you dont need to close(). 
+with open('fole.txt') as ifile:
+	for line in ifile:
+		print(line)

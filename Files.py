@@ -2,6 +2,8 @@ import os
 import shutil
 import send2trash # Third party module - pip install send2trash
 import zipfile
+import pickle
+import shelve
 
 # Create a path that will work on any OS, i.e. \\ for windows / for linux
 files = ['file1.txt','file2.txt','file3.txt']
@@ -24,10 +26,11 @@ os.path.isfile('.\\stuff.txt') # check its a file, can also use isdir() to check
 base, ext = os.path.splitext() #split the base and extention from a file and save
 
 # Reading and Writing plaintext 
-file = open('C:\\Temp\\stuff.txt') # Open a file to get the file object, this also create a new file if not present
-file.read() # Read entire contents
-file.reasdlines() # Returns a list of each line
-file.close() # close the handle you have on the file
+f = open('C:\\Temp\\stuff.txt') # Open a file to get the file object, this also create a new file if not present
+f.read() # Read entire contents
+f.readlines() # Returns a list of each line
+f.read().splitlines() # equiv to above
+f.close() # close the handle you have on the file
 # Note: You can only read the file once?
 
 # Writing to files
@@ -41,6 +44,17 @@ f.close()
 
 f = open('C:\\temp\\stuff.txt', 'wb') # Open the file in 'wb' WriteBinary Mode
 f.close()
+
+f = open('C:\\temp\\stuff.txt', 'x') # create for write but will fail if file already exists
+f.close()
+
+#write to file
+print("hello", file=f)
+
+# when using with, a context manager, you dont need to close(). 
+with open('fole.txt') as ifile:
+	for line in ifile:
+		print(line)
 
 # Moving files
 shutil.copy('C:\\Temp\\stuff.txt', 'C:\\temp\\stuff.txt.copy') # Copy a file (source, dest)
@@ -73,4 +87,34 @@ zip.getinfo(zip.namelist()[0]) # Getinfo on a particular file, in this case the 
 zip.extractall('C:\\temp\\') # extract all files, can also use extract() to pick particular files
 zip.close()
 
+
+"""
+pickle
+"""
+# store information semi-permanently
+people = ['Fred', 'George', 'Harry', 'Eustace', 'Algernon', 'Jim']
+outp = open('people.p', 'wb')
+pickle.dump(people, outp, pickle.HIGHEST_PROTOCOL)
+outp.close()
+
+# retreive
+inp = open('people.p', 'rb')
+people_in = pickle.load(inp)
+inp.close()
+print (people_in)
+
+"""
+shelve
+"""
+# store
+stock = shelve.open('stock')
+stock['JJ72'] = ('CD', 127)
+stock['0898'] = ('CD', 32)
+stock['Blackadder'] = ('DVD', 12)
+stock.close()
+
+# retreive
+stock = shelve.open('stock')
+print (stock['JJ72'])
+stock.close()
 
