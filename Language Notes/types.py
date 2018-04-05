@@ -5,6 +5,11 @@ type(var) # find type
 int('999') # explicitly convert types
 int('0xFF', 16) # fun with hex, comes out as 255 as an int
 
+# when using mutable objects like lists 
+list1 = list2 # these are both refs to the same object in memory which may be bad
+list2 = list1[:] # copies all element but if an element is another list we have just moved the problem
+list2 = copy.deepcopy(list1) # copy the whole structure as a new object in memory
+
 """
 List
 """
@@ -38,6 +43,13 @@ sorted(l1, key=len) # sorts by apply the function len, i.e. size. or str.lower b
 
 zip(l1, l2) # interlace two lists, returns a list of tuples. 
 
+dict1 = {'one':1, 'two':2}
+[i for i in dict1] # generator that returns ['one', 'two']
+
+list1 = [1, 2, 3, 4, 5, 6, 7, 8]
+[i for i in list1 if not i%2] # generator with condition statement that retusn even numbers
+['even' if not i%2 else 'odd' for i in list1]
+
 """
 Tuple
 """
@@ -65,6 +77,12 @@ dict(zip(l1, l2)) # can make a dict from twolists by first zippig them
 # unpacking
 my_list = [1 , 2 , 3 , 4]
 x, y, *z = my_list # gives 1 2 [3, 4]
+
+# comprehension
+numbers = ['zero','wun','two','tree','fower','fife','six','seven','ait','niner']
+codes = {str(i):name for i,name in enumerate(numbers)}  # result dict with ints as keys and number in list as value
+
+{k:v for k,*v in ('key', 'val1','val2')} # nice syntactically. makes dict with value a list of val1 and val2 courtesy of packing *v
 
 """
 String
@@ -119,3 +137,7 @@ s1.symmetric_difference(s2) # items only in one set. Opposite of intersection
 s1 ^ s2
 
 list(set(l1)) # way of getting only unique values in a list
+
+#set comprehension
+sentence = 'The quick brown fox jumps over the lazy dog.'
+letters = { char.lower() for char in sentence if char.isalpha() } # get all unique alphabetic letters in string

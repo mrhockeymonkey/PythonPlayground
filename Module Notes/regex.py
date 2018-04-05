@@ -32,3 +32,16 @@ search = r"""
 m = re.search(r'(?P<first>a)(?P<second>b)(?P<third>c)', "abc") # capture using names
 m.groups() # to see all captures
 m.group('second') # to retreive named captures
+
+
+# using lambda in sub
+srdict = { # things to find and values to replce them with
+'pepsi':'iron-bru', 
+'Pepsi':'Iron-bru',
+'PEPSI':'WATER'
+}
+
+msg = "Pepsi, more pepsi, give me PEPSI!!!"
+search = '|'.join(srdict.keys()) # create a search pattern
+newmsg = re.sub(search, lambda m: srdict[m.group(0)], msg) # lambda will decide what to replace capture with
+print(newmsg)
