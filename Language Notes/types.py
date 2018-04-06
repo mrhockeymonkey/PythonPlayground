@@ -10,6 +10,10 @@ list1 = list2 # these are both refs to the same object in memory which may be ba
 list2 = list1[:] # copies all element but if an element is another list we have just moved the problem
 list2 = copy.deepcopy(list1) # copy the whole structure as a new object in memory
 
+hasattr('hello', '__str__') # test to see if object has method/variable
+isinstance('hello', str) # is it of type string, also check inheritance
+issubclass('hello', object) # is it a subclass of
+
 """
 List
 """

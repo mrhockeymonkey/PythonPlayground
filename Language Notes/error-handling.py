@@ -1,5 +1,16 @@
 import os
+import sys
 import traceback
+import warnings
+
+# write errors to stderr
+if some_error:
+	sys.stderr.write("som error message")
+	print("another way of writing error", file=sys.stderr)
+	exit(1)
+
+# write warnings
+warnings.warn('bad bad bad')
 
 # To catch an exception
 try :
@@ -18,9 +29,18 @@ try :
 	if (os.path.exists('C:\\SomeFakeFile.txt')) :
 		print('found you file')
 	else :
-		raise Exception('Wheres that file?') # raise is like throw
-except Exception as err :
-	print(err)
+		raise FileNotFoundError('Wheres that file?') # raise is like throw
+except FileNotFoundError as fnfe:
+	print("where dat file at? its certainly not at {0}".format(fnfe.filename))
+except Exception as e :
+	print(e)
+	sys.exit(e.args[0]) # exit with correct return code
+finally: 
+	pass # do some other stuff
 
 # Assert 
 # You should not handle asserts with try try,except. If an assert fails you should fail the program
+assert all([0,1,2,3]) # would raise becuase 0 is False
+
+class MyError(Exception):
+	pass
